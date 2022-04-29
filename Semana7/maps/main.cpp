@@ -5,7 +5,7 @@
 using namespace std;
 
 //define un nombre corto para el tipo map utilizado en este programa
-typedef std::map< int, double, std::less< int > > Mid;
+typedef map< int, double, std::less< int > > Mid;
 
 int main(int argc, char *argv[])
 {
@@ -24,21 +24,21 @@ int main(int argc, char *argv[])
 
     cout << "pares contiene:\nClave\tValor\n";
 
-    for ( Mid::const_iterator iter = pares.begin();
-          iter != pares.end(); ++iter )
-    {
-        cout << iter->first << '\t' << iter->second << '\n';
-    }
+//    for ( Mid::const_iterator iter = pares.begin();
+//          iter != pares.end(); ++iter )
+//    {
+//        cout << iter->first << '\t' << iter->second << '\n';
+//    }
 
 //    for(pair<int,double> par: pares)
 //    {
 //        cout<<par.first<<'\t'<<par.second<<'\n';
 //    }
 
-//    for (auto par: pares)
-//    {
-//        cout<<par.first<<'\t'<<par.second<<'\n';
-//    }
+    for (auto par: pares)
+    {
+        cout<<par.first<<'\t'<<par.second<<'\n';
+    }
 
     pares[ 25 ] = 9999.99;
     pares[ 40 ] = 8765.43;
