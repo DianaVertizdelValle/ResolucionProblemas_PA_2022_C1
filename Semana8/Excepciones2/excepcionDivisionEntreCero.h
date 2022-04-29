@@ -7,10 +7,10 @@ using namespace std;
 class ExcepcionDivisionEntreCero : public runtime_error
 {
     public:
-        ExcepcionDivisionEntreCero():runtime_error("\nintento de división entre cero")
-        {
-            //cuerpo de constructor vacío
-        }
+        ExcepcionDivisionEntreCero():runtime_error("\nintento de división entre cero"){}
+
 };
+
+
 
 #endif // EXCEPCIONDIVISIONENTRECERO_H

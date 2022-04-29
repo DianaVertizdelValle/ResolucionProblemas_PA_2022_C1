@@ -1,6 +1,6 @@
 #include <QCoreApplication>
-#include "excepcionDivisionEntreCero.h"
 #include <iostream>
+#include "excepcionDivisionEntreCero.h"
 using namespace std;
 
 /*
@@ -10,7 +10,8 @@ using namespace std;
  float dividir( float par_a , float par_b)
  {
      if(par_b == 0)
-         throw ExcepcionDivisionEntreCero();
+         //throw ExcepcionDivisionEntreCero();
+         throw "Division por cero";
 
      float result = par_a / par_b;
 
@@ -37,9 +38,18 @@ int main(int argc, char *argv[])
         {
             cout<<divisionPorCero.what()<<endl;
         }
+        catch (const char* divisionPorCero)
+        {
+            cout<<divisionPorCero<<endl;
+        }
         cout<<"\ningrese dos números para dividir: ";
     }
 
     cout<<"Fin del programa"<<endl;
     return a.exec();
 }
+
+
+
+
+
