@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.14.2, 2022-04-29T15:29:40. -->
+<!-- Written by QtCreator 4.14.2, 2022-04-29T18:17:14. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -294,8 +294,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/Documentos/ProgramacionAvanzada/ResProblemas/Excepciones2/Excepciones2.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/Documentos/ProgramacionAvanzada/ResProblemas/Excepciones2/Excepciones2.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Excepciones22</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/REPOSITORIOS/ResolucionProblemas_PA_2022_C1/Semana8/Excepciones2/Excepciones2.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/REPOSITORIOS/ResolucionProblemas_PA_2022_C1/Semana8/Excepciones2/Excepciones2.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
