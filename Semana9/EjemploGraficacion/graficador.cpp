@@ -1,5 +1,6 @@
 #include "graficador.h"
 #include <iostream>
+#define PI 3.14159265
 
 using namespace std;
 
@@ -24,10 +25,10 @@ void Graficador::dibujarEjes()
     glPushMatrix();
         glLineWidth(3);
         glBegin(GL_LINES);
-            glVertex3f(1,0,0);//orden de los vértices importa
-            glVertex3f(1,2,0);
+            glVertex3f(-1,0,0);//orden de los vértices importa
+            glVertex3f(1,0,0);
+            glVertex3f(0,-1,0);
             glVertex3f(0,1,0);
-            glVertex3f(2,1,0);
         glEnd();
     glPopMatrix();
 }
@@ -40,15 +41,15 @@ void Graficador::dibujarCuadrado()
         glScalef(sx,sy,1);
         glBegin(GL_QUADS);
             glColor3f(1,0,0);
-            glVertex3f(0,0,0);
+            glVertex3f(-0.25,-0.25,0);
             glColor3f(0,1,0);
-            glVertex3f(0.5,0,0);
+            glVertex3f(-0.25,0.25,0);
             glColor3f(0,0,1);
-            glVertex3f(0.5,0.5,0);
+            glVertex3f(0.25,0.25,0);
             glColor3f(1,1,1);
-            glVertex3f(0,0.5,0);
+            glVertex3f(0.25,-0.25,0);
         glEnd();
-        glPopMatrix();
+    glPopMatrix();
 }
 
 void Graficador::dibujoSimple()
@@ -65,6 +66,23 @@ void Graficador::dibujoSimple()
             glVertex3f(0,0.5,0);
         glEnd();
     glPopMatrix();
+
+}
+
+void Graficador::dibujarCirculo(float x_centro, float y_centro, float radio)
+{
+    float alfa = 0;
+    float d_alfa = 1;
+    glColor3f(1,0,0);
+        glBegin(GL_LINES);
+            for(alfa=0; alfa<360; alfa+=d_alfa)
+            {
+
+                float x = radio*cos(alfa*PI/180);
+                float y = radio*sin(alfa*PI/180);
+                glVertex3f(x_centro + x,y_centro + y,0);
+            }
+        glEnd();
 
 }
 
@@ -153,7 +171,7 @@ void Graficador::initializeGL()
 
 void Graficador::resizeGL(int w, int h)
 {
-    glViewport(0,h/2,w/2,h/2 ); //área de dibujo dentro de la ventana
+    glViewport(0,0,w,h ); //área de dibujo dentro de la ventana
     //Establecemos la matriz que se va a usar
     //En este caso se activa la matriz de proyección
     //Los comandos que se usen después van a afectar a esta matriz
@@ -161,8 +179,8 @@ void Graficador::resizeGL(int w, int h)
     glLoadIdentity(); //limpio cualquier transformación previa
 
     float xmin, xmax, ymin, ymax, zmin, zmax;
-    xmin = 0;   xmax = 2; //cuando modifico estos parámetros cambio lo que se proyecta
-    ymin = 0;   ymax = 2; //en el tamaño de la ventana(no cambio la cantidad de pixeles)
+    xmin = -1;   xmax = 1; //cuando modifico estos parámetros cambio lo que se proyecta
+    ymin = -1;   ymax = 1; //en el tamaño de la ventana(no cambio la cantidad de pixeles)
     zmin = -1;   zmax = 1;
 
     glOrtho(xmin, xmax, ymin, ymax, zmin, zmax);
@@ -177,8 +195,9 @@ void Graficador::paintGL()
     resizeGL(width(),height());
     //Dibujo
     //Se limpia el fondo de la ventana con el color de initialize
-    glClear(GL_CLEAR_BUFFER);
+    glClear(GL_COLOR_BUFFER_BIT);
     dibujarEjes();
+    //dibujarCirculo(1,1,1);
     dibujarCuadrado();
 }
 

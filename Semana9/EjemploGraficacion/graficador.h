@@ -5,6 +5,7 @@
 #include <QOpenGLWidget> //para GUI con formularios que tenga gráfico adentro
 #include <QKeyEvent>
 #include <QWheelEvent>
+#include <math.h>
 
 //#include <QOpenGLWindow>
 
@@ -28,6 +29,7 @@ class Graficador: public QOpenGLWidget
         void dibujarEjes();
         void dibujarCuadrado();
         void dibujoSimple();
+        void dibujarCirculo(float x_centro, float y_centro, float radio);
         float alfa;
         float dx, dy;
         float sx, sy;
