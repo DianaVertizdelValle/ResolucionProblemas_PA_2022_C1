@@ -72,18 +72,16 @@ void Graficador::dibujoSimple()
 void Graficador::dibujarCirculo(float x_centro, float y_centro, float radio)
 {
     float alfa = 0;
-    float d_alfa = 1;
+    float d_alfa = 0.5;
     glColor3f(1,0,0);
-        glBegin(GL_LINES);
+        glBegin(GL_POLYGON); //GL_LINES para tener solo borde
             for(alfa=0; alfa<360; alfa+=d_alfa)
             {
-
                 float x = radio*cos(alfa*PI/180);
                 float y = radio*sin(alfa*PI/180);
                 glVertex3f(x_centro + x,y_centro + y,0);
             }
         glEnd();
-
 }
 
 Graficador::~Graficador()
@@ -197,7 +195,7 @@ void Graficador::paintGL()
     //Se limpia el fondo de la ventana con el color de initialize
     glClear(GL_COLOR_BUFFER_BIT);
     dibujarEjes();
-    //dibujarCirculo(1,1,1);
-    dibujarCuadrado();
+    dibujarCirculo(0,0,0.5);
+    //dibujarCuadrado();
 }
 
