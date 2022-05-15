@@ -50,34 +50,34 @@ int main()
         cout << vec5[i] << " ";  // Muestro componentes del vector con bucle for
     cout << endl;
 
-    vec4 *= 2;    // producto por escalar
-    vec4 *= vec5; // producto punto (¿debería funcionar?)
-    vec4 %= vec5; // producto cruz
-
-    if (vec6*2 == 2*vec6)
-        cout << "Excelente, el producto es conmutativo";
-
-    if (vec4 == ++vec4)
-        cout << "Deberia entrar aqui?";
-
-    if (vec4 == vec4++)
-        cout << "Deberia entrar aqui?";
-
-    if (vec4 < vec6)
-        cout << "El modulo de Vector 4 es menor que el de Vector 6" << endl;
-
-    if (vec4%vec6 != -(vec6%vec4)) // El producto cruz debe ser anticonmutativo
-        cout << "Algo anda mal..." << endl;
-
     ofstream archiOut("vector.txt");
     archiOut << vec6;                // Guardar vector en archivo;
 
-    cin >> vec6;                     // Leer valores por consola
-    cout << "Vector 6 (consola): " << vec6 << endl;
+//    vec4 *= 2;    // producto por escalar
+//    vec4 *= vec5; // producto punto (¿debería funcionar?)
+//    vec4 %= vec5; // producto cruz
 
-    ifstream archiIn("vector.txt");  // Leer valores de archivo
-    archi >> vec6;
-    cout << "Vector 6 (archivo): " << vec6 << endl;
+//    if (vec6*2 == 2*vec6)
+//        cout << "Excelente, el producto es conmutativo";
+
+//    if (vec4 == ++vec4)
+//        cout << "Deberia entrar aqui?";
+
+//    if (vec4 == vec4++)
+//        cout << "Deberia entrar aqui?";
+
+//    if (vec4 < vec6)
+//        cout << "El modulo de Vector 4 es menor que el de Vector 6" << endl;
+
+//    if (vec4%vec6 != -(vec6%vec4)) // El producto cruz debe ser anticonmutativo
+//        cout << "Algo anda mal..." << endl;
+
+//    cin >> vec6;                     // Leer valores por consola
+//    cout << "Vector 6 (consola): " << vec6 << endl;
+
+//    ifstream archiIn("vector.txt");  // Leer valores de archivo
+//    archi >> vec6;
+//    cout << "Vector 6 (archivo): " << vec6 << endl;
 
 
     return 0;

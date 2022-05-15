@@ -4,10 +4,14 @@
 
 using namespace std;
 
-Graficador::Graficador()
+Graficador::Graficador(int pdelta_t)
 {
     dx = dy = alfa = 0;
     sx = sy = 1;
+    delta_t = pdelta_t;
+    connect(&cronometro, SIGNAL(timeout()), this, SLOT(animar()));
+    cronometro.start(delta_t);
+
 }
 
 void Graficador::mostrar(int pAncho, int pAlto, QApplication *pPtrApp)
@@ -195,7 +199,12 @@ void Graficador::paintGL()
     //Se limpia el fondo de la ventana con el color de initialize
     glClear(GL_COLOR_BUFFER_BIT);
     dibujarEjes();
-    dibujarCirculo(0,0,0.5);
-    //dibujarCuadrado();
+    //dibujarCirculo(0,0,0.5);
+    dibujarCuadrado();
 }
 
+void Graficador::animar()
+{
+    alfa -= 10;
+    repaint();
+}

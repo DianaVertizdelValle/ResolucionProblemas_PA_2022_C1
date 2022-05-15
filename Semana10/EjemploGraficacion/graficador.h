@@ -6,13 +6,15 @@
 #include <QKeyEvent>
 #include <QWheelEvent>
 #include <math.h>
+#include <QTimer>
 
 //#include <QOpenGLWindow>
 
 class Graficador: public QOpenGLWidget
 {
+        Q_OBJECT
     public:
-        Graficador();
+        Graficador(int pdelta_t = 1);
         void mostrar(int pAncho, int pAlto, QApplication* pPtrApp);
         ~Graficador();
 
@@ -26,6 +28,8 @@ class Graficador: public QOpenGLWidget
         void paintGL() override;
 
     private:
+        int delta_t;
+        QTimer cronometro;
         void dibujarEjes();
         void dibujarCuadrado();
         void dibujoSimple();
@@ -33,6 +37,9 @@ class Graficador: public QOpenGLWidget
         float alfa;
         float dx, dy;
         float sx, sy;
+
+    private slots:
+        void animar();
 };
 
 #endif // GRAFICADOR_H
