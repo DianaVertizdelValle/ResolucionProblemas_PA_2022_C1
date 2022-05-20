@@ -83,13 +83,9 @@ void Rectangulo::actualizar()
 
 void Rectangulo::ajustarRangosXY()
 {
-//    float hip = sqrt(base*base +altura*altura);
-//    xmin = -hip/2 -1 + cx;
-//    ymin = -hip/2 -1 + cy;
-//    xmax =  hip/2 + 1 + cx;
-//    ymax =  hip/2 + 1 + cy;
-    xmin = -1;   xmax = 1; //cuando modifico estos parámetros cambio lo que se proyecta
-    ymin = -1;   ymax = 1; //en el tamaño de la ventana(no cambio la cantidad de pixeles)
+
+    xmin = -2;   xmax = 2;
+    ymin = -2;   ymax = 2;
 
 }
 
@@ -99,10 +95,10 @@ void Rectangulo::dibujarEjes()
     glPushMatrix();
         glLineWidth(3);
         glBegin(GL_LINES);
-            glVertex3f(-1,0,0);//orden de los vértices importa
-            glVertex3f(1,0,0);
-            glVertex3f(0,-1,0);
-            glVertex3f(0,1,0);
+            glVertex3f(-2,0,0);//orden de los vértices importa
+            glVertex3f(2,0,0);
+            glVertex3f(0,-2,0);
+            glVertex3f(0,2,0);
         glEnd();
     glPopMatrix();
 }
@@ -115,13 +111,13 @@ void Rectangulo::dibujarRectangulo()
         glScalef(base,altura,1);
         glBegin(GL_QUADS);
             glColor3f(1,0,0);
-            glVertex3f(-0.25,-0.25,0);
+            glVertex3f(-0.5,-0.5,0);
             glColor3f(0,1,0);
-            glVertex3f(-0.25,0.25,0);
+            glVertex3f(-0.5,0.5,0);
             glColor3f(0,0,1);
-            glVertex3f(0.25,0.25,0);
+            glVertex3f(0.5,0.5,0);
             glColor3f(1,1,1);
-            glVertex3f(0.25,-0.25,0);
+            glVertex3f(0.5,-0.5,0);
         glEnd();
     glPopMatrix();
 }
