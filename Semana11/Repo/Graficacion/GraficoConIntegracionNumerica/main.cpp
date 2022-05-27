@@ -1,5 +1,7 @@
 #include <QApplication>
-
+#include "../Graficador2D/graficador.h"
+#include "dibujofuncion.h"
+#include "dibujointegral.h"
 
 float funcion_1(float x)
 {

@@ -1,7 +1,6 @@
 #include <QCoreApplication>
 #include <QApplication>
 
-
 #include "campovectorial.h"
 #include "../Repo/Graficacion/Graficador2D/graficador.h"
 

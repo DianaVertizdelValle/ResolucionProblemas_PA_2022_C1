@@ -11,7 +11,6 @@ class CampoVectorial : public Actualizable, public Dibujo
 {
     public:
         CampoVectorial(int pcantidad = 16);
-
         void actualizar() override;
         void dibujar() override;
         void ajustarRangosXY() override;
@@ -19,9 +18,7 @@ class CampoVectorial : public Actualizable, public Dibujo
     private:
         int cantidad;
         float alfa;
-
         vector<vector<Vector3D>> matriz;
-
 
 
 };

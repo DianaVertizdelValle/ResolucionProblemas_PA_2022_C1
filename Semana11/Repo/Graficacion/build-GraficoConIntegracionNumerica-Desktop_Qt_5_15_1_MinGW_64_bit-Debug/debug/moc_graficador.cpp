@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../../../../../../Documentos/ProgramacionAvanzada/Semana11/Repo/Graficacion/Graficador2D/graficador.h"
+#include "../../Graficador2D/graficador.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
