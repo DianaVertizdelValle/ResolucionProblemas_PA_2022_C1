@@ -1,7 +1,6 @@
 #include <QApplication>
 #include "gestordearchivos.h"
 #include "../Repo/Graficacion/Graficador2D/graficador.h"
-#include "dibujoimagen.h"
 
 int main(int argc, char *argv[])
 {
